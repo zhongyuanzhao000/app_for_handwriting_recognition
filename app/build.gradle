@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'key'
+            keyPassword 'qwertyuiop'
+            storeFile file('C:/Users/19891/AndroidStudioProjects/key.jks')
+            storePassword 'qwertyui'
+        }
+    }
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.example.activity"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -frtti -fexceptions  -ljnigraphics"
+                //abiFilters  'armeabi-v7a'
+            }
+        }
+        ndk {
+            //moduleName "native-lib"
+            //moduleName "libopencv_java3"
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'armeabi'
+            //abiFilters 'armeabi-v7a'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs/libs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'org.tensorflow:tensorflow-android:1.8.0'
+    implementation 'org.opencv:openCVLibrary:3.4.0'
+    implementation project(':smartcropperlib')
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+}

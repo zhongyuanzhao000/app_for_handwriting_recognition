@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.example.view.MaskSurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </com.example.view.MaskSurfaceView>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/edit_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A9A9A9"
+        android:layout_gravity="center_horizontal"
+        android:text="手写字识别"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_capture"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/btn_recapture"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="重拍"/>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="识别" />
+
+    </LinearLayout>
+
+</RelativeLayout>

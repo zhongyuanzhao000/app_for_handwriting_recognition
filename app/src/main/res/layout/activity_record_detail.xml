@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="18dp">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/detail_pool_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="30dp"
+            android:text="1号池塘"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detail_feed_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="投料量:"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detail_water_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="换水量:" />
+
+        <TextView
+            android:id="@+id/detail_ph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="PH值:" />
+
+
+        <TextView
+            android:id="@+id/detail_nh4n"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="2dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="氨氮:" />
+
+        <TextView
+            android:id="@+id/detail_nano2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="亚硝酸盐:" />
+
+        <TextView
+            android:id="@+id/detail_medication_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="用药记录:" />
+
+    </LinearLayout>
+</ScrollView>
